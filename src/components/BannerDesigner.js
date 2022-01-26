@@ -45,7 +45,6 @@ const saveToPng = () => {
 const BannerDesigner = (props) => {
   const [bgColor, setBgColor] = useState("red");
   const [fontColor, setFontColor] = useState("blue");
-  const [activeFontFamily, setActiveFontFamily] = useState("Open Sans");
   const [mainText, setMainText] = useState("This is Primary text");
   const [secText, setSecText] = useState("This is Secondary text");
 
@@ -69,8 +68,6 @@ const BannerDesigner = (props) => {
         setFontColor={setFontColor}
         bgColor={bgColor}
         setBgColor={setBgColor}
-        activeFontFamily={activeFontFamily}
-        setActiveFontFamily={setActiveFontFamily}
       />
       <Form className="form d-flex col-md-3 mx-2 px-2 ">
         <Button

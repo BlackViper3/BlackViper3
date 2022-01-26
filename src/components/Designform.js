@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, FormGroup, Label, Col, Input, FormFeedback } from "reactstrap";
 import FontPicker from "font-picker-react";
 const Designform = (props) => {
+  const [activeFontFamily, setActiveFontFamily] = useState("Open Sans");
+
   return (
     <div className="form">
       <Form>
@@ -85,11 +87,12 @@ const Designform = (props) => {
               className="fontPicker"
               id="FontPicker"
               style={{ backgroundColor: "#fff" }}
+              activeFontFamily={activeFontFamily}
               apiKey="AIzaSyADEKKUFLqKr-xeDdve9w6cKZkDYBlLsyg"
               limit="20"
-              categories="sans-serif"
+              categories="monospace"
               onChange={(nextfont) => {
-                props.setActiveFontFamily(nextfont);
+                setActiveFontFamily(nextfont.family);
               }}
             />
           </Col>
